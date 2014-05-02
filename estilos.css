@@ -1,0 +1,162 @@
+/* ENVIALIA CARRIER STYLES */
+/* PABLO lUACES PRESAS - NETSIS */
+
+/**** LINKS ****/
+
+	a.envAction{
+		margin: 0 2px;
+		display: inline-block;
+		position: relative;
+		top: 2px;
+	}
+
+/**** CABECERA ****/
+
+	div.eHead{
+		position: relative;
+		display: block;
+		margin-top: 16px;
+	}
+
+	#netsis-plugin{
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		background: #f1f1f1;
+	}
+
+	div.eHead:before{
+		display: block;
+		content: " ";
+		width: 114px;
+		height: 40px;
+		background: url('img/ne-logo.png') no-repeat;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	div.eHead h2{
+		position: relative;
+		top: -3px;
+	}
+
+	/**** LOGO ****/
+
+	img.envialiaLogo{
+		float: left;
+		width: 40px;
+		margin-right: 16px;
+	}
+
+/**** GENERALES ****/
+
+	input.big{
+		width: 40%;
+		min-width: 300px;
+	}
+
+	.justify{
+		text-align: justify !important;
+	}
+
+	.clearfix{
+		clear: both;
+	}
+
+/**** BOTON ENVIAR (EN PEDIDOS WOOCOMERCE) ****/
+
+	a.button.tips.send{
+		position: relative;
+		font-family: WooCommerce;
+		text-indent: -9999px;
+		height: 2em !important;
+		width: 2em;
+	}
+
+	a.button.tips.send:after{
+		content: "\e019";
+		speak: none;
+		margin: 0;
+		text-indent: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		text-align: center;
+		width: 98%;
+		height: 100%;
+	}
+
+/**** TABLAS ****/
+
+	#envOptions{
+		width: 72% !important;
+		float: left;
+	}
+
+	#envOptions .form-table{
+		padding: 10px;
+	}
+
+	table.envialia{
+		width: 100%;
+		margin-top: 14px;
+		border-collapse:collapse;
+  		border: none;
+	}
+
+	table.envialia td{
+		text-align: center;
+		vertical-align: middle;
+		padding: 4px 0;
+	}
+
+	table.envialia td:first-child{
+		border-radius: 20px 0 0 20px;
+	}
+
+	table.envialia td:last-child{
+		border-radius: 0 20px 20px 0;
+	}
+
+	table.envialia td.noresults{
+		border-radius: 6px;
+		padding: 20px 0;
+	}
+
+	table.envialia tr:hover td{
+		background: #F5DA81;
+	}
+
+/**** PANEL DE EXTRAS ****/
+
+	#envialiaExtras{
+		margin-top: 30px;
+		border-radius: 8px 0 0 8px;
+		width: 20%;
+		min-width: 140px;
+		height: auto;
+		padding: 2%;
+		border-left: 3px solid red;
+		float: right;
+		background: #FFF;
+	}
+
+	#envialiaExtras p{
+		margin: 0 0 10px 0;
+		text-align: center;
+	}
+
+	#envialiaExtras form{
+		text-align: center;
+	}
+
+@media (max-width: 630px) {
+	#envialiaExtras{
+		width: 91.5%;
+		padding: 2% 4%;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+}
