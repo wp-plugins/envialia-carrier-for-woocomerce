@@ -15,10 +15,12 @@ This plugin allows you to process completed orders by Envialia with one click
 Complete a order and then press the truck button (Enviar) and the data is sent to the company. 
 The user who made the purchase will receive e-mail whith the tracking number. 
 The Envialia panel contain information of shipments, you can print labels, track or cancel.
+Visit our web: [netsis](http://netsis.es/)
+
 
 == Installation ==
 
-1. Upload `envialia-carrier` to the `/wp-content/plugins/` directory
+1. Upload `envialia-carrier-for-woocommerce` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Configure the settings in Envialia -> Configuración
 
