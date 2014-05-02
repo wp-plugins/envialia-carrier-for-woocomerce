@@ -8,15 +8,15 @@ Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin allows you to process completed orders by Envialia with one click
+This plugin allows you to process completed WooCommerce orders by Envialia with one click.
 
 == Description ==
 
-Complete a order and then press the truck button (Enviar) and the data is sent to the company. 
+Complete a WooCommerce order and then press the truck button (Enviar) and the data is sent to the company. 
 The user who made the purchase will receive e-mail whith the tracking number. 
 The Envialia panel contain information of shipments, you can print labels, track or cancel.
 
-Visit our web: [netsis](http://netsis.es/)
+Visit our web: [netsis.es](http://netsis.es/)
 
 
 == Installation ==
