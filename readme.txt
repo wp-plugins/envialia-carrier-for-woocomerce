@@ -4,7 +4,7 @@ Donate link: http://netsis.es
 Tags: carrier, envialia, woocommerce, send order
 Requires at least: 3.5
 Tested up to: 3.9
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,13 @@ No, for now
 3. Envialia panel
 
 == Changelog ==
+
+= 1.2 =
+* Corrected wrong installation directory!
+
+= 1.1 =
+* Corrected wrong contributor.
+* Corrected screenshots.
 
 = 1.0 =
 * Initial version

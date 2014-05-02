@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: Envialia Carrier for Woocomerce
-Version: 1.0
-Plugin URI: http://wordpress.org/plugins/envialia-carrier/
-Description: Add functions and control panel to WooCommerce for Envalia carrier
+Version: 1.2
+Plugin URI: http://wordpress.org/plugins/envialia-carrier-for-woocomerce/
+Description: Añade funciones y un panel de control a WooCommerce para la empresa de transporte Envalia.
 Author URI: http://www.netsis.es/
 Author: PABLO LUACES
 License: GPL2
@@ -16,8 +16,8 @@ $settings = array('url', 'codigo_agencia', 'codigo_cliente', 'password_cliente',
 $uploads = wp_upload_dir();
 define ('ENVIALIA_PLUGIN_TABLE', 'envialia_carrier');
 define ('ENVIALIA_PLUGIN_OPTIONS', 'envialia_carrier_settings');
-define ('ENVIALIA_UPLOADS', $uploads['basedir'].'/envialia-carrier/');
-define ('ENVIALIA_UPLOADS_URL', $uploads['baseurl'].'/envialia-carrier/');
+define ('ENVIALIA_UPLOADS', $uploads['basedir'].'/envialia-carrier-for-woocomerce/');
+define ('ENVIALIA_UPLOADS_URL', $uploads['baseurl'].'/envialia-carrier-for-woocomerce/');
 
 /////////////// Activando el Plugin ///////////////////////
 
@@ -73,7 +73,7 @@ function envialiaCarrierSettings(){
 /////////////// Creando el menú ///////////////////////
 
 function envialiaCarrierMenu(){
-	add_menu_page('Servicio de paquetería Envialia', 'Envialia', 'publish_pages', 'envialia-carrier-panel', 'envialiaCarrierPanel', plugins_url('envialia-carrier/img/envialia-icon.png'), 66);
+	add_menu_page('Servicio de paquetería Envialia', 'Envialia', 'publish_pages', 'envialia-carrier-panel', 'envialiaCarrierPanel', plugins_url('envialia-carrier-for-woocomerce/img/envialia-icon.png'), 66);
 	add_submenu_page('envialia-carrier-panel', 'Configuración de envios', 'Configuración', 'manage_options', __FILE__, 'envialiaCarrierSettingsPage');
 }
 
@@ -104,7 +104,7 @@ add_action('admin_menu', 'envialiaCarrierMenu');
 add_action('admin_init', 'envialiaCarrierSettings');
 
 function register_plugin_styles_envialia() {
-	wp_register_style('envialia-carrier', plugins_url('envialia-carrier/estilos.css'));
+	wp_register_style('envialia-carrier', plugins_url('envialia-carrier-for-woocomerce/estilos.css'));
 	wp_enqueue_style('envialia-carrier');
 }
 add_action( 'admin_enqueue_scripts', 'register_plugin_styles_envialia' );
@@ -138,14 +138,14 @@ function extrasPanel(){
 function envialiaCarrierSettingsPage(){
 	global $e_comm;
 	if ($e_comm->is_logged()) $e_comm->printMessage('El plugin de ENVIALIA está en línea', 1);
-	else $e_comm->printMessage('El plugin de ENVIALIA no estÁ funcionando, revise los datos de conexión', 0);
+	else $e_comm->printMessage('El plugin de ENVIALIA no está funcionando, revise los datos de conexión', 0);
 	?>
 	<div class="wrap">
 
 		<div class="eHead">
-			<img src="<?php echo plugins_url('envialia-carrier/img/envialia.png') ?>" alt="Envialia Logo" class="envialiaLogo"/>
+			<img src="<?php echo plugins_url('envialia-carrier-for-woocomerce/img/envialia.png') ?>" alt="Envialia Logo" class="envialiaLogo"/>
 			<h2>Configuración de Envialia</h2>
-			<a href="http://netsis.es" target="_blank" id="netsis-plugin"><img src="<?php echo plugins_url('envialia-carrier/img/ne-logo.png') ?>" /></a>
+			<a href="http://netsis.es" target="_blank" id="netsis-plugin"><img src="<?php echo plugins_url('envialia-carrier-for-woocomerce/img/ne-logo.png') ?>" /></a>
 		</div>
 
 		<?php echo extrasPanel() ?>
@@ -205,9 +205,9 @@ function envialiaCarrierPanel(){
 	<div class="wrap">
 
 		<div class="eHead">
-			<img src="<?php echo plugins_url('envialia-carrier/img/envialia.png') ?>" alt="Envialia Logo" class="envialiaLogo" />
+			<img src="<?php echo plugins_url('envialia-carrier-for-woocomerce/img/envialia.png') ?>" alt="Envialia Logo" class="envialiaLogo" />
 			<h2>Administración de envíos</h2>
-			<a href="http://netsis.es" target="_blank" id="netsis-plugin"><img src="<?php echo plugins_url('envialia-carrier/img/ne-logo.png') ?>" /></a>
+			<a href="http://netsis.es" target="_blank" id="netsis-plugin"><img src="<?php echo plugins_url('envialia-carrier-for-woocomerce/img/ne-logo.png') ?>" /></a>
 		</div>
 
 		<table class="envialia">
@@ -218,9 +218,9 @@ function envialiaCarrierPanel(){
 					$linkLabel = (file_exists($rute))? $result->codigo_barras:admin_url('admin.php?page=envialia-carrier-panel&albaran='.$result->num_albaran.'&action=label');
 
 					echo '<tr><td><a href="'.admin_url('post.php?post='.$result->id_envio_order.'&action=edit').'" title="Ver pedido">#'.$result->id_envio_order.'</a></td><td>'.$result->fechaEsp.'</td><td>'.$result->codigo_envio.'</td><td>'.$result->num_albaran.'</td><td>
-							<a href="'.$linkLabel.'" target="_blank" title="Etiquetas" class="envAction"><img src="'.plugins_url('envialia-carrier/img/sticker.png').'" /></a>
-							<a href="'.$result->url_track.'" target="_blank" title="Tracking" class="envAction"><img src="'.plugins_url('envialia-carrier/img/info.png').'" /></a>
-							<a href="'.admin_url('admin.php?page=envialia-carrier-panel&order='.$result->id_envio_order.'&albaran='.$result->num_albaran.'&action=delete').'" title="Cancelar" class="envAction prompt"><img src="'.plugins_url('envialia-carrier/img/cancel.png').'" /></a>
+							<a href="'.$linkLabel.'" target="_blank" title="Etiquetas" class="envAction"><img src="'.plugins_url('envialia-carrier-for-woocomerce/img/sticker.png').'" /></a>
+							<a href="'.$result->url_track.'" target="_blank" title="Tracking" class="envAction"><img src="'.plugins_url('envialia-carrier-for-woocomerce/img/info.png').'" /></a>
+							<a href="'.admin_url('admin.php?page=envialia-carrier-panel&order='.$result->id_envio_order.'&albaran='.$result->num_albaran.'&action=delete').'" title="Cancelar" class="envAction prompt"><img src="'.plugins_url('envialia-carrier-for-woocomerce/img/cancel.png').'" /></a>
 						  </td></tr>';
 				}
 
