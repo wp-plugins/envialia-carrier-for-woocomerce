@@ -39,11 +39,11 @@ No, for now
 == Changelog ==
 
 = 1.2 =
-* Corrected wrong installation directory!
+* Fixed wrong installation directory!
 
 = 1.1 =
-* Corrected wrong contributor.
-* Corrected screenshots.
+* Fixed wrong contributor.
+* Fixed screenshots.
 
 = 1.0 =
 * Initial version
