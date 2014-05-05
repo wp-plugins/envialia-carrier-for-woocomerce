@@ -8,7 +8,7 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin allows you to process completed orders by Envialia with one click
+This plugin allows you to process completed WooCommerce orders by Envialia with one click
 
 == Description ==
 
@@ -18,7 +18,7 @@ The Envialia panel contain information of shipments, you can print labels, track
 
 == Installation ==
 
-1. Upload `envialia-carrier` to the `/wp-content/plugins/` directory
+1. Upload `envialia-carrier-for-woocommerce` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Configure the settings in Envialia -> Configuración
 
