@@ -1,6 +1,6 @@
 ﻿=== Envialia Carrier ===
 Contributors: netsislab
-Donate link: http://netsis.es
+Donate link: http://netsis.es/section/donations.html
 Tags: carrier, envialia, woocommerce, send order
 Requires at least: 3.5
 Tested up to: 3.9
@@ -18,7 +18,7 @@ The Envialia panel contain information of shipments, you can print labels, track
 
 == Installation ==
 
-1. Upload `envialia-carrier` to the `/wp-content/plugins/` directory
+1. Upload `envialia-carrier-for-woocomerce` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Configure the settings in Envialia -> Configuración
 
