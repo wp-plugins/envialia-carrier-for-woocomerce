@@ -16,8 +16,8 @@ Completa un pedido en WooCommerce y después pulsa el botón del camión (Enviar
 El usuario que hizo la compra recibirá un email con el número de seguimiento.
 El panel de Envialia contiene información de los envíos. Puedes hacer el seguimiento o cancelarlos. Permite imprimir etiquetas en PDF.
 
-* 1. Para el cálculo de los gastos de envío recomendamos el plugin [WooCommerce - APG Weight and Postcode/State/Country Shipping](https://wordpress.org/plugins/woocommerce-apg-weight-and-postcodestatecountry-shipping/).
-* 2. El servidor tiene que tener habilitada la librería **cURL**.
+* Para el cálculo de los gastos de envío recomendamos el plugin [WooCommerce - APG Weight and Postcode/State/Country Shipping](https://wordpress.org/plugins/woocommerce-apg-weight-and-postcodestatecountry-shipping/).
+* El servidor tiene que tener habilitada la librería **cURL**.
 
 Visita nuestra web: [netsis.es](http://netsis.es/)
 
