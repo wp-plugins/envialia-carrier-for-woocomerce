@@ -1,22 +1,26 @@
 ﻿=== Envialia Carrier ===
 Contributors: netsisEstudio
 Donate link: http://netsis.es/section/donations.html
-Tags: carrier, envialia, woocommerce, send order
+Tags: envialia, woocommerce, carrier, send order
 Requires at least: 3.5
 Tested up to: 3.9
 Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin allows you to process completed WooCommerce orders by Envialia with one click.
+Este plugin procesa pedidos completados de WooCommerce con la empresa de transporte Envialia, con sólo un click.
 
 == Description ==
 
-Complete a WooCommerce order and then press the truck button (Enviar) and the data is sent to the company. 
-The user who made the purchase will receive e-mail whith the tracking number. 
-The Envialia panel contain information of shipments, you can print labels, track or cancel.
+Completa un pedido en WooCommerce y después pulsa el botón del camión (Enviar) y serán enviados los datos a Envialia. 
+El usuario que hizo la compra recibirá un email con el número de seguimiento. 
+El panel de Envialia contiene información de envíos, puedes imprimir etiquetas en PDF, hacer el seguimiento o cancelarlos.
 
-Visit our web: [netsis.es](http://netsis.es/)
+Notas: 
+* 1. Para el cálculo de los gastos de envío recomendamos el plugin [WooCommerce - APG Weight and Postcode/State/Country Shipping](https://wordpress.org/plugins/woocommerce-apg-weight-and-postcodestatecountry-shipping/).
+* 2. El servidor tiene que tener habilitada la librería **cURL**.
+
+Visita nuestra web: [netsis.es](http://netsis.es/)
 
 
 == Installation ==
@@ -27,15 +31,15 @@ Visit our web: [netsis.es](http://netsis.es/)
 
 == Frequently Asked Questions ==
 
-= Works with other companies ? =
+= ¿Funciona con otras empresas de transporte? =
 
-No, for now
+No, de momento.
 
 == Screenshots ==
 
-1. Configuration
-2. Envialia button on Woocomerce orders
-3. Envialia panel
+1. Configuración
+2. Botón de Envialia en los pedidos de WooCommerce
+3. Panel de Envialia
 
 == Changelog ==
 
