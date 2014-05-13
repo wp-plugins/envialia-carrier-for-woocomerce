@@ -12,16 +12,15 @@ Este plugin procesa pedidos completados de WooCommerce con la empresa de transpo
 
 == Description ==
 
-Completa un pedido en WooCommerce y después pulsa el botón del camión (Enviar) y serán enviados los datos a Envialia. 
-El usuario que hizo la compra recibirá un email con el número de seguimiento. 
-El panel de Envialia contiene información de envíos, puedes imprimir etiquetas en PDF, hacer el seguimiento o cancelarlos.
+Completa un pedido en WooCommerce y después pulsa el botón del camión (Enviar) y serán enviados los datos a Envialia.  
+El usuario que hizo la compra recibirá un email con el número de seguimiento.
+El panel de Envialia contiene información de los envíos. Puedes hacer el seguimiento o cancelarlos. Permite imprimir etiquetas en PDF.
 
-Notas: 
-* 1. Para el cálculo de los gastos de envío recomendamos el plugin [WooCommerce - APG Weight and Postcode/State/Country Shipping](https://wordpress.org/plugins/woocommerce-apg-weight-and-postcodestatecountry-shipping/).
-* 2. El servidor tiene que tener habilitada la librería **cURL**.
+= Notas =
+* Para el cálculo de los gastos de envío recomendamos [WooCommerce - APG Weight and Postcode/State/Country Shipping](https://wordpress.org/plugins/woocommerce-apg-weight-and-postcodestatecountry-shipping/).
+* El servidor tiene que tener habilitada la librería **cURL**.
 
 Visita nuestra web: [netsis.es](http://netsis.es/)
-
 
 == Installation ==
 
