@@ -17,7 +17,9 @@
 		display: block;
 		margin-top: 16px;
 	}
-
+	div.eHead div.first{
+		margin-top: 24px;
+	}
 	#netsis-plugin{
 		display: block;
 		position: absolute;
@@ -25,7 +27,6 @@
 		right: 0;
 		background: #f1f1f1;
 	}
-
 	div.eHead:before{
 		display: block;
 		content: " ";
@@ -36,7 +37,6 @@
 		top: 0;
 		right: 0;
 	}
-
 	div.eHead h2{
 		position: relative;
 		top: -3px;
@@ -52,17 +52,20 @@
 
 /**** GENERALES ****/
 
-	input.big{
-		width: 40%;
-		min-width: 300px;
-	}
-
 	.justify{
 		text-align: justify !important;
 	}
-
+	.center{
+		text-align: center !important;
+	}
+	.left{
+		text-align: left !important;
+	}
 	.clearfix{
 		clear: both;
+	}
+	.column-order_status mark.sended.tips{
+		background: url('img/sended.png') no-repeat;
 	}
 
 /**** BOTON ENVIAR (EN PEDIDOS WOOCOMERCE) ****/
@@ -74,7 +77,6 @@
 		height: 2em !important;
 		width: 2em;
 	}
-
 	a.button.tips.send:after{
 		content: "\e019";
 		speak: none;
@@ -94,62 +96,114 @@
 		width: 72% !important;
 		float: left;
 	}
-
-	#envOptions .form-table{
-		padding: 10px;
+	#envOptions .form-table{ padding: 10px }
+	#envOptions .form-table th{ padding: 8px 10px 8px 0; font-weight: normal }
+	#envOptions .form-table td { padding: 5px }
+	#envOptions small { color: #666 }
+	#envOptions .service_logo { position: relative; top: 1px }
+	#envOptions .nav-tab-wrapper .dashicons{
+		position: relative;
+		top:2px;
+		margin-right: 2px;
+	}
+	#envOptions .big{
+		width: 40%;
+		min-width: 300px;
+	}
+	#envOptions .full{
+		width: 100%;
 	}
 
 	table.envialia{
 		width: 100%;
-		margin-top: 14px;
+		margin-top: 24px;
 		border-collapse:collapse;
   		border: none;
 	}
-
+	table.envialia th{
+		height: 26px;
+		background: #888;
+		color: #FFF;
+		margin-bottom: 20px;
+	}
 	table.envialia td{
 		text-align: center;
 		vertical-align: middle;
 		padding: 4px 0;
 	}
-
 	table.envialia td:first-child{
 		border-radius: 20px 0 0 20px;
 	}
-
 	table.envialia td:last-child{
 		border-radius: 0 20px 20px 0;
 	}
-
 	table.envialia td.noresults{
 		border-radius: 6px;
 		padding: 20px 0;
 	}
-
-	table.envialia tr:hover td{
+	table.envialia tr:hover td:not(.separador){
 		background: #F5DA81;
 	}
 
 /**** PANEL DE EXTRAS ****/
 
 	#envialiaExtras{
-		margin-top: 30px;
 		border-radius: 8px 0 0 8px;
 		width: 20%;
 		min-width: 140px;
+		max-width: 240px;
 		height: auto;
 		padding: 2%;
-		border-left: 3px solid red;
+		border-left: 3px solid #e2231a;
+		border-top: 3px solid #e2231a;
 		float: right;
 		background: #FFF;
+		position: fixed;
+		top: 140px;
+		right: 0;
 	}
-
 	#envialiaExtras p{
 		margin: 0 0 10px 0;
 		text-align: center;
 	}
-
 	#envialiaExtras form{
 		text-align: center;
+	}
+	#envialiaExtras .rate{
+		position: relative;
+		margin: 0 auto;
+	}
+	#envialiaExtras .star-rating {
+		overflow: hidden;
+		text-indent: 100%;
+		white-space: nowrap;
+	}
+	#envialiaExtras .star-rate{
+		position: absolute;
+		top: 0; left: 0;
+		font-size: 0;
+	}
+	#envialiaExtras .rate a{
+		width: 21px;
+		height: 17px;
+		display: inline-block;
+	}
+	#envialiaExtras .rate a:last-child{
+		width: 16px;
+	}
+	#envialiaExtras .rate:hover .star-rating {
+		display: none;
+	}
+	#envialiaExtras .rate:hover a {
+		background: url("/wp-admin/images/stars.png?ver=20121108") no-repeat scroll left top;
+	}
+	#envialiaExtras .rate a:hover ~ a{
+		background: none;
+	}
+	#envialiaExtras .button{
+		border: none;
+	    background: #e2231a;
+	    color: #FFF;
 	}
 
 @media (max-width: 630px) {
@@ -158,5 +212,10 @@
 		padding: 2% 4%;
 		margin-top: 10px;
 		margin-bottom: 10px;
+		max-width: 100%;
+		position: relative !important;
+		margin-top: 30px;
+		top: 0 !important;
+		right: auto;
 	}
 }
