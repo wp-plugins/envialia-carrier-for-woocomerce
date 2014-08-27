@@ -4,7 +4,7 @@ Donate link: http://netsis.es/section/donations.html
 Tags: envialia, woocommerce, carrier, send order
 Requires at least: 3.5
 Tested up to: 3.9
-Stable tag: 2.1
+Stable tag: 2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,9 +25,9 @@ Muestra al cliente las distintas opciones de envío y su precio dependiendo de d
 * Cálculo de tarifa según tramos de peso o mediante el importe de la compra 
 * Permite que el cliente elija entre los servicios Envialia 24h y Envialia 72h o entre Envialia Europe Express y Envialia Worlwide o muestra directamente el más económico sugún sus preferencias.
 * Los servicios sólo se muestran en todo caso si están disponibles en el país del cliente.
-* Seguimiento del pedido.
+* Seguimiento del pedido
 
-*Para su negocio - Gestión integrada con Envialia (BACKEND) *
+*Para su negocio - Gestión integrada con Envialia (BACKEND)*
 
 Complete un pedido en WooCommerce y después pulse el botón del camión (Enviar) y serán tramitado directamente con Envialia, sin introducir ningún dato.
 El pedido pasará al estado "Enviado" (o Sended) y a partir de ese momento el cliente verá un botón en el resumen de pedidos de su cuenta para hacer el seguimiento del paquete.
@@ -76,6 +76,12 @@ No, es exclusivo para Envialia
 3. Información sobre el estado del plugin
 
 == Changelog ==
+
+= 2.2 =
+* Fixed wrong agency in label
+
+= 2.1 =
+* Fixed wrong ID name
 
 = 2.0 =
 * Added a lot of funcionality!

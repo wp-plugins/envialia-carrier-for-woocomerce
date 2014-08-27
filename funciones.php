@@ -118,9 +118,9 @@
 
 	    $ch = curl_init();
 	    curl_setopt_array($ch, ($options + $defaults));
-		   
+
 	    if (!$result = curl_exec($ch)) trigger_error(curl_error($ch));
-    	
+
 	    curl_close($ch);
 	    return $result;
 	}
@@ -145,7 +145,7 @@
 	/////////////// Funciones de Woocommerce Envialia ///////////////////////
 
 	function addEnvialiaShippingMethods($methods) {
-		$methods[] = 'WC_Envialia_Shipping_Method'; 
+		$methods[] = 'WC_Envialia_Shipping_Method';
 		return $methods;
 	}
 
@@ -231,7 +231,7 @@
 
 							//Envio gratis
 							$envio_gratis = (
-								($e_comm->esPeninsular($pais) && $servicio_grat_nacional===$servId && $total > $importe_minimo_nacional) || 
+								($e_comm->esPeninsular($pais) && $servicio_grat_nacional===$servId && $total > $importe_minimo_nacional) ||
 								($e_comm->esEuropeo($pais) && $servicio_grat_internacional===$servId && $total > $importe_minimo_internacional) ||
 								($servicio_grat_internacional==='EWW' && $servicio_grat_internacional===$servId && $total > $importe_minimo_internacional)
 							)? true:false;
@@ -267,7 +267,7 @@
 								'taxes' => false,
 								'calc_tax' => 'per_order'
 							);
-							 
+
 							// Register the rate
 							$this->add_rate($rate);
 
@@ -347,7 +347,7 @@
 					$shipment_number = $wpdb->get_var("SELECT order_item_id FROM {$wpdb->prefix}woocommerce_order_items WHERE order_item_type = 'shipping' AND order_id = '$idOrden'");
 					$servicio = $wpdb->get_var("SELECT meta_value FROM {$wpdb->prefix}woocommerce_order_itemmeta WHERE meta_key = 'method_id' AND order_item_id = '$shipment_number'");
 					$numero = $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->prefix}woocommerce_order_items WHERE order_item_type = 'line_item' AND order_id = '$idOrden'");
-					$num_paquetes = $e_comm->bultosPorEnvio($numero);
+					$num_paquetes = $this->bultosPorEnvio($numero);
 					$is_sended = get_post_meta($idOrden, '_sended');
 					$cod_provincia_origen = substr(get_option('cli_codpostal'), 0, 2);
 					$codpostal = implode(get_post_meta($idOrden, '_shipping_postcode'));
@@ -388,7 +388,6 @@
 											<intPaq>'.$num_paquetes.'</intPaq>
 											<strObs>'.$observaciones.'</strObs>
 
-											<strCodPais>'.implode(get_post_meta($idOrden, '_shipping_country')).'</strCodPais>
 											<strDesDirEmails>'.$email.'</strDesDirEmails>
 											<boInsert>'.true.'</boInsert>
 										</WebServService___GrabaEnvio7>
@@ -476,6 +475,7 @@
 						/**** SE ELIMINA ****/
 						if ($erase){
 							delete_post_meta($idOrden, '_sended');
+							cambiarEstadoOrden($idOrden, 'completed');
 							$wpdb->query("DELETE FROM $tabla WHERE `id_envio_order` = $idOrden");
 							if (file_exists($pdf)) unlink($pdf);
 							$this->printMessage('Se ha cancelado la orden #'.$idOrden, 1);
@@ -646,7 +646,7 @@
 		    function bultosPorEnvio($numArticulos=10){
 				$tipo_bultos = (boolean) obtenerOpcion('bultos_envio'); // 0 uno | 1 varible
 				$num_articulos_bultos = (int) obtenerOpcion('articulos_bulto');
-				return ($tipo_bultos==0)? 1:ceil($numArticulos / $num_articulos_bultos);		    	
+				return ($tipo_bultos>0)? ceil($numArticulos / $num_articulos_bultos):1;
 		    }
 
 			/**** DETERMINA SI SE DEBE APLICAR IMPUESTOS A UN PAIS ****/
@@ -682,10 +682,10 @@
 						<div style="width: '.$rate.'px" class="star-rating"></div>
 						<div class="star-rate">
 							<a title="Malo" href="'.$rate_url.'?rate=1#postform" target="_blank"><span></span></a>
-							<a title="Funciona" href="'.$rate_url.'?rate=2#postform" target="_blank"><span></span></a> 
-							<a title="Bueno" href="'.$rate_url.'?rate=3#postform" target="_blank"><span></span></a> 
-							<a title="Muy Bueno" href="'.$rate_url.'?rate=4#postform" target="_blank"><span></span></a> 
-							<a title="Fantástico" href="'.$rate_url.'?rate=5#postform" target="_blank"><span></span></a> 
+							<a title="Funciona" href="'.$rate_url.'?rate=2#postform" target="_blank"><span></span></a>
+							<a title="Bueno" href="'.$rate_url.'?rate=3#postform" target="_blank"><span></span></a>
+							<a title="Muy Bueno" href="'.$rate_url.'?rate=4#postform" target="_blank"><span></span></a>
+							<a title="Fantástico" href="'.$rate_url.'?rate=5#postform" target="_blank"><span></span></a>
 				    	</div>
 				    </div>
 

@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Envialia Carrier for Woocommerce
-Version: 2.1
+Version: 2.2
 Plugin URI: http://wordpress.org/plugins/envialia-carrier-for-woocomerce/
 Description: Calcula automáticamente el importe del envío por peso o valor de la compra mediante los ficheros csv de Envialia, permitiendo elegir el servicio más conveniente (24h, 72h, internacional...) y también permite tramitar la recogida de los paquetes por Envialia con solo un click, generando las etiquetas del paquete, el número de traking, etc.
 Author URI: http://www.netsis.es/
@@ -14,11 +14,11 @@ License: GPL2
 $e_comm = null;
 $uploads = wp_upload_dir();
 
-define (ENVIALIA_PLUGIN_ID, 'envialia-carrier-for-woocommerce');
+define (ENVIALIA_PLUGIN_ID, 'envialia-carrier-for-woocomerce');
 define (ENVIALIA_PLUGIN_TABLE, 'envialia_carrier');
 define (ENVIALIA_PLUGIN_OPTIONS, 'envialia_carrier_settings');
-define (ENVIALIA_UPLOADS, $uploads['basedir'].'/envialia-carrier-for-woocommerce/');
-define (ENVIALIA_UPLOADS_URL, $uploads['baseurl'].'/envialia-carrier-for-woocommerce/');
+define (ENVIALIA_UPLOADS, $uploads['basedir'].'/envialia-carrier-for-woocomerce/');
+define (ENVIALIA_UPLOADS_URL, $uploads['baseurl'].'/envialia-carrier-for-woocomerce/');
 
 $settings = array(
 				'url',
@@ -193,20 +193,25 @@ add_action('woocommerce_my_account_my_orders_actions', 'envialiaMyAccountActions
 add_filter('woocommerce_shipping_methods', 'addEnvialiaShippingMethods');
 add_action('woocommerce_shipping_init', 'envialiaShippingMethod');
 add_action('admin_menu', 'envialiaCarrierMenu');
+add_action('admin_init', 'envialiaCarrierSettings');
 add_action('init', 'envialiaCarrierInit');
+
+/////////////// Configuracion del plugin ///////////////////////
+
+function envialiaCarrierSettings(){
+	global $settings;
+	foreach ($settings as $name) register_setting(ENVIALIA_PLUGIN_OPTIONS, $name);
+}
 
 /////////////// Lanzar el plugin ///////////////////////
 
 function envialiaCarrierInit(){
-	global $e_comm, $settings;
+	global $e_comm;
 
 	if(!session_id()) session_start();
 	require dirname(__FILE__).'/funciones.php';
 	require dirname(__FILE__).'/paginator.class.php';
 	$e_comm = new envialia();
-
-	// Configuración del plugin
-	foreach ($settings as $name) register_setting(ENVIALIA_PLUGIN_OPTIONS, $name);
 }
 
 /////////////// Obtiene la información del plugin ///////////////////////
@@ -214,16 +219,17 @@ function envialiaCarrierInit(){
 function obtenerInformacionPlugin($id, $nombre) {
 	$argumentos = (object) array('slug' => $id);
 	$consulta = array('action' => 'plugin_information', 'timeout' => 15, 'request' => serialize($argumentos));
-	$respuesta = get_transient($nombre);
+	$respuesta = get_transient($id);
 
 	if (!$respuesta){
 		$respuesta = wp_remote_post('http://api.wordpress.org/plugins/info/1.0/', array('body' => $consulta));
 		set_transient($nombre, $respuesta, 24 * HOUR_IN_SECONDS);
 	}
 
-	$plugin = get_object_vars(unserialize($respuesta['body']));
-	if (is_wp_error($respuesta)) $plugin['rating'] = 100;
-	
+	$vars = unserialize($respuesta['body']);
+	if (is_object($vars)) $plugin = get_object_vars(unserialize($respuesta['body']));
+	if (!isset($plugin['rating'])) $plugin['rating'] = 100;
+
 	return $plugin;
 }
 
