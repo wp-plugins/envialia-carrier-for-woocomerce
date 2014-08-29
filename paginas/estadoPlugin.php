@@ -1,9 +1,8 @@
 <div class="wrap">
-
 	<div class="eHead">
-		<img src="<?php echo plugins_url('envialia-carrier-for-woocomerce/img/envialia.png') ?>" alt="Envialia Logo" class="envialiaLogo" />
+		<img src="<?php echo ENVIALIA_PLUGIN_URI.'/img/envialia.png' ?>" alt="Envialia Logo" class="envialiaLogo" />
 		<h2>Estado del plugin</h2>
-		<a href="http://netsis.es" target="_blank" id="netsis-plugin"><img src="<?php echo plugins_url('envialia-carrier-for-woocomerce/img/ne-logo.png') ?>" /></a>
+		<a href="http://netsis.es" target="_blank" id="netsis-plugin"><img src="<?php echo ENVIALIA_PLUGIN_URI.'/img/ne-logo.png' ?>" /></a>
 	</div>
 
 	<?php echo extrasPanel() ?>
@@ -14,13 +13,28 @@
 
 		<?php
 
-		$memory_limit = function_exists('wc_let_to_num')?wc_let_to_num( WP_MEMORY_LIMIT ):woocommerce_let_to_num( WP_MEMORY_LIMIT );
+		function getWooVersion(){
+			if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))){
+				// If the plugin version number is set, return it
+				return WOOCOMMERCE_VERSION;
+			}
+
+			return false;
+		}
+
+		$wc = in_array('woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option('active_plugins')));
+		$memory_limit = function_exists('wc_let_to_num')? wc_let_to_num( WP_MEMORY_LIMIT ):woocommerce_let_to_num( WP_MEMORY_LIMIT );
 		$curl_info = curl_version();
 		$server_configs = array(
 			"Versión de PHP" => array(
 				"required" => "5.0",
 				"value"    => phpversion(),
 				"result"   => version_compare(phpversion(), "5.0")
+			),
+			"WooCommerce" => array(
+				"required" => "2.1.0",
+				"value"    => getWooVersion(),
+				"result"   => version_compare(getWooVersion(), "2.1.0")
 			),
 			"Librería cURL" => array(
 				"required" => true,
@@ -90,25 +104,25 @@
 			'TEMP_DIR'				=> array (
 					'description'		=> 'Directorio para la generación de etiquetas',
 					'value'				=> ENVIALIA_UPLOADS,
-					'status'			=> (is_writable(ENVIALIA_UPLOADS) ? "ok" : "failed"),			
+					'status'			=> (is_writable(ENVIALIA_UPLOADS) ? "ok" : "failed"),
 					'status_message'	=> (is_writable(ENVIALIA_UPLOADS) ? "Correcto" : "Problema de escritura")
 				),
 			'TARIFAS'				=> array (
 					'description'		=> 'Directorio de Tarifas',
 					'value'				=> obtenerOpcion('ruta_tarifas'),
-					'status'			=> (is_writable(obtenerOpcion('ruta_tarifas')) ? "ok" : "failed"),			
+					'status'			=> (is_writable(obtenerOpcion('ruta_tarifas')) ? "ok" : "failed"),
 					'status_message'	=> (is_writable(obtenerOpcion('ruta_tarifas')) ? "Correcto" : "Problema de escritura")
 				),
 			'TARIFAS_PESO'			=> array (
 					'description'		=> 'Fichero CSV de tarifas según peso',
 					'value'				=> 'tarifas.peso.csv',
-					'status'			=> (is_file(obtenerOpcion('ruta_tarifas').'/tarifas.peso.csv') ? "ok" : "failed"),			
+					'status'			=> (is_file(obtenerOpcion('ruta_tarifas').'/tarifas.peso.csv') ? "ok" : "failed"),
 					'status_message'	=> (is_file(obtenerOpcion('ruta_tarifas').'/tarifas.peso.csv') ? "Existe" : "No existe")
 				),
 			'TARIFAS_IMPORTE'		=> array (
 					'description'		=> 'Fichero CSV de tarifas según importe',
 					'value'				=> 'tarifas.importe.csv',
-					'status'			=> (is_file(obtenerOpcion('ruta_tarifas').'/tarifas.importe.csv') ? "ok" : "failed"),			
+					'status'			=> (is_file(obtenerOpcion('ruta_tarifas').'/tarifas.importe.csv') ? "ok" : "failed"),
 					'status_message'	=> (is_file(obtenerOpcion('ruta_tarifas').'/tarifas.importe.csv') ? "Existe" : "No existe")
 				)
 			);
@@ -124,7 +138,7 @@
 			</tr>
 			<?php
 			foreach ($permissions as $permission) {
-				if ($permission['status'] == 'ok') {
+				if ($permission['status'] === 'ok') {
 					$background = "#9e4";
 					$color = "black";
 				} else {
