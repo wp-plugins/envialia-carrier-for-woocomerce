@@ -564,7 +564,7 @@
 		        // Preparamos los datos para el minimo y maximo
 		        $precio_envio = 0;
 		        $max=count($segmento);
-		        $valor_min = floatval($segmento[0]['vcomp']);
+		        $valor_min = floatval($segmento[0]['valor']);
 		        $precio_min = floatval($segmento[0]['precio']);
 		        $valor_max = floatval($segmento[$max-2]['valor']);
 		        $precio_max = floatval($segmento[$max-2]['precio']);
