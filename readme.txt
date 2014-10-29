@@ -3,8 +3,8 @@ Contributors: netsisEstudio
 Donate link: http://netsis.es/section/donations.html
 Tags: envialia, woocommerce, carrier, send order
 Requires at least: 3.5
-Tested up to: 3.9
-Stable tag: 2.3
+Tested up to: 4.0
+Stable tag: 2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,9 @@ No, es exclusivo para Envialia
 3. Información sobre el estado del plugin
 
 == Changelog ==
+
+= 2.4 =
+* Solucionado un bug en los envios gratuitos
 
 = 2.3 =
 * New simulator function 'Simulador'!

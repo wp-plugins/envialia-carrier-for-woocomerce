@@ -19,7 +19,7 @@
 
 	function obtenerOpcion($nombre){
 		global $defaults;
-		return get_option($nombre, $defaults[$nombre]);
+		return (isset($defaults[$nombre]))? get_option($nombre, $defaults[$nombre]):get_option($nombre);
 	}
 
 	function xml2array($contents, $get_attributes = 1, $priority = 'tag'){
@@ -198,10 +198,12 @@
 					$cod_postal = $woocommerce->customer->get_shipping_postcode();
 
 					$solo_mas_economico = (boolean) obtenerOpcion('mostrar_economico');
-					$envio_gratis = $e_comm->esGratis($servId, $pais, $total);
 
 					foreach ($servicios as $servId => $servName) {
 						if (obtenerOpcion('servicio_'.$servId)){ // El servicio está activo
+
+							// Comprobamos si es gratis
+							$envio_gratis = $e_comm->esGratis($servId, $pais, $total);
 
 							// Saltamos los servicios que no interesan
 							if (!$e_comm->servicioValido($servId, $pais)) continue;
