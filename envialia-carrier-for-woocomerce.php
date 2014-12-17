@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Envialia Carrier for Woocommerce
-Version: 2.4
+Version: 2.5
 Plugin URI: http://wordpress.org/plugins/envialia-carrier-for-woocomerce/
 Description: Calcula automáticamente el importe del envío por peso o valor de la compra mediante los ficheros csv de Envialia, permitiendo elegir el servicio más conveniente (24h, 72h, internacional...) y también permite tramitar la recogida de los paquetes por Envialia con solo un click, generando las etiquetas del paquete, el número de traking, etc.
 Author URI: http://www.netsis.es/
@@ -41,7 +41,7 @@ function installEnvialiaCarrier(){
 		// Crear directorio de uploads
 		if (!is_dir(ENVIALIA_UPLOADS)) mkdir(ENVIALIA_UPLOADS);
 
-		// Crear estado de enviado
+		// Crear estado de enviado (obsoleto desde WC 2.1)
 		if (!term_exists('sended', 'shop_order_status')) wp_insert_term('sended', 'shop_order_status');
 	}
 }
@@ -72,6 +72,36 @@ function envialiaOrderActions($actions, $order){
 	}
 
 	return $actions;
+}
+
+/////////////// Estados de la orden de Envialia ///////////////////////
+
+function registerSendedShipmentOrderStatus(){
+    register_post_status('wc-sended', array(
+        'label'                     => 'Enviado',
+        'public'                    => true,
+        'exclude_from_search'       => false,
+        'show_in_admin_all_list'    => true,
+        'show_in_admin_status_list' => true,
+        'label_count'               => _n_noop('Enviados <span class="count">(%s)</span>', 'Enviados <span class="count">(%s)</span>')
+    ));
+}
+
+function addSendedShipmentToOrderStatuses($order_statuses) {
+
+    $new_order_statuses = array();
+
+    // add new order status after processing
+    foreach ($order_statuses as $key => $status) {
+
+        $new_order_statuses[ $key ] = $status;
+
+        if ('wc-processing' === $key){
+            $new_order_statuses['wc-sended'] = 'Enviado';
+        }
+    }
+
+    return $new_order_statuses;
 }
 
 /////////////// Acciones de Envialia en mi cuenta ///////////////////////
@@ -163,6 +193,8 @@ add_filter('woocommerce_shipping_methods', 'addEnvialiaShippingMethods');
 add_action('woocommerce_shipping_init', 'envialiaShippingMethod');
 add_action('admin_menu', 'envialiaCarrierMenu');
 add_action('admin_init', 'envialiaCarrierSettings');
+add_filter('wc_order_statuses', 'addSendedShipmentToOrderStatuses');
+add_filter('init', 'registerSendedShipmentOrderStatus');
 add_action('init', 'envialiaCarrierInit');
 
 /////////////// Configuracion del plugin ///////////////////////

@@ -3,16 +3,14 @@ Contributors: netsisEstudio
 Donate link: http://netsis.es/section/donations.html
 Tags: envialia, woocommerce, carrier, send order
 Requires at least: 3.5
-Tested up to: 4.0
-Stable tag: 2.4
+Tested up to: 4.0.1
+Stable tag: 2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Todo lo que necesitas si trabajas con la empresa de transporte Envialia
 
 == Description ==
-
-**Plugin Envialia Carrier Premium: [Netsis Market](http://market.netsis.es/downloads/envialia-woocommerce-plugin/)**
 
 **IMPORTANTE: *Envialia Carrier* requiere WooCommerce 2.1.0 o superior.**
 
@@ -62,9 +60,9 @@ Visita nuestra web: [netsis.es](http://netsis.es/)
 
 == Installation ==
 
-1. Upload `envialia-carrier-for-woocomerce` to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Configure and use it
+1. Sube `envialia-carrier-for-woocomerce` al directorio `/wp-content/plugins/`
+2. Activa el plugin desde el menú 'Plugins' de WordPress
+3. Configurar y usar
 
 == Frequently Asked Questions ==
 
@@ -80,35 +78,40 @@ No, es exclusivo para Envialia
 
 == Changelog ==
 
+
+
+= 2.5 =
+* Actualizado para que funcione con Woocommerce 2.2 - Corregido estado de pedido (Order status)
+
 = 2.4 =
-* Solucionado un bug en los envios gratuitos
+* Solucionado un bug en los envíos gratuitos
 
 = 2.3 =
-* New simulator function 'Simulador'!
-* Added advanced settings tab
-* Check's if Woocommerce is installed in 'Estado' page
-* Admin can select a service if client don't do it
-* Fixed error calculating rate prices
-* Fixed uninstall
+* ¡Nueva función 'Simulador'!
+* Añadida pestaña de configuración avanzada
+* Comprueba si Woocommerce está instalado en la página de 'Estado'
+* El Administrador puede seleccionar un servicio Envialia si el cliente no lo ha hecho
+* Corregido un error al calcular las tarifas
+* Corregida desinstalación
 
 = 2.2 =
-* Fixed wrong agency in label
+* Corregida agencia errónea en etiqueta
 
 = 2.1 =
-* Fixed wrong ID name
+* Corregido nombre ID erróneo
 
 = 2.0 =
-* Added frontend funcionality!
-* More options
-* Better organization
-* New screenshots
+* ¡Añadida funcionalidad en el área del cliente!
+* Más opciones
+* Mejor organización
+* Nuevas capturas de pantalla
 
 = 1.2 =
-* Fixed wrong installation directory!
+* ¡Corregido directorio de instalación erróneo!
 
 = 1.1 =
-* Fixed wrong contributor.
-* Fixed screenshots.
+* Corregido desarrollador
+* Corregidas capturas de pantalla
 
 = 1.0 =
-* Initial version
+* Versión inicial

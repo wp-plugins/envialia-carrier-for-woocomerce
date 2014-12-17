@@ -47,8 +47,8 @@
 
 	<form method="post">
 		<table class="tablaSimple">
-			<?php if (!obtenerOpcion('calcular_precio')): ?><tr valign="top"><th scope="row">Peso paquete (kg)</th><td><input type="text" name="simulador_peso" size="3" maxlength="3" value="<?php echo (strlen($simulador_peso)>0)? $simulador_peso:1 ?>" /></td></tr><?php endif ?>
-			<?php if (obtenerOpcion('calcular_precio')): ?><tr valign="top"><th scope="row">Importe compra</th><td><i><input type="text" name="simulador_total" size="10" maxlength="10" value="<?php echo (strlen($simulador_total)>0)? $simulador_total:10.00 ?>" /></td></tr><?php endif ?>
+			<tr valign="top"><th scope="row">Peso paquete (kg)</th><td><input type="text" name="simulador_peso" size="3" maxlength="3" value="<?php echo (strlen($simulador_peso)>0)? $simulador_peso:1 ?>" /></td></tr>
+			<tr valign="top"><th scope="row">Importe compra</th><td><i><input type="text" name="simulador_total" size="10" maxlength="10" value="<?php echo (strlen($simulador_total)>0)? $simulador_total:10.00 ?>" /></td></tr>
 			<tr valign="top"><th scope="row">Nº de artículos</th><td><i><input type="text" name="simulador_numero" size="3" maxlength="3" value="<?php echo (strlen($simulador_numero)>0)? $simulador_numero:10 ?>" /></td></tr>
 			<tr valign="top"><th scope="row">Cód. Postal de destino</th><td><input type="text" name="simulador_cp" size="6" maxlength="6" value="<?php echo (strlen($simulador_cp)>0)? $simulador_cp:'01000' ?>" /></td></tr>
 			<tr valign="top"><th scope="row">País de destino</th><td><input type="text" name="simulador_pais" size="2" maxlength="2" value="<?php echo (strlen($simulador_pais)>0)? $simulador_pais:'ES' ?>" /></td></tr>
