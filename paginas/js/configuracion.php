@@ -38,10 +38,12 @@
 	});
 
 	window.onpopstate = function(e){
-		jQuery('.nav-tab-wrapper a').removeClass('nav-tab-active');
-		jQuery('table.form-table').hide();
-		jQuery('table[data-section=' + e.state + ']').show();
-		jQuery('a[data-target=' + e.state + ']').addClass('nav-tab-active');
+		if (e.state!=null){
+			jQuery('.nav-tab-wrapper a').removeClass('nav-tab-active');
+			jQuery('table.form-table').hide();
+			jQuery('table[data-section=' + e.state + ']').show();
+			jQuery('a[data-target=' + e.state + ']').addClass('nav-tab-active');
+		}
 	};
 
 	function enableDisableItems(){

@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Envialia Carrier for Woocommerce
-Version: 2.5
+Version: 2.3.1
 Plugin URI: http://wordpress.org/plugins/envialia-carrier-for-woocomerce/
 Description: Calcula automáticamente el importe del envío por peso o valor de la compra mediante los ficheros csv de Envialia, permitiendo elegir el servicio más conveniente (24h, 72h, internacional...) y también permite tramitar la recogida de los paquetes por Envialia con solo un click, generando las etiquetas del paquete, el número de traking, etc.
 Author URI: http://www.netsis.es/
@@ -184,6 +184,9 @@ function envialiaPluginExtraActionLinks($links) {
 
 /////////////// Registrando las funciones ///////////////////////
 
+require dirname(__FILE__).'/funciones.php';
+require dirname(__FILE__).'/paginator.class.php';
+
 register_activation_hook(__FILE__, 'installEnvialiaCarrier');
 add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'envialiaPluginExtraActionLinks');
 add_action('admin_enqueue_scripts', 'registrarEstilosEnvialiaCarrier');
@@ -210,8 +213,6 @@ function envialiaCarrierInit(){
 	global $e_comm;
 
 	if(!session_id()) session_start();
-	require dirname(__FILE__).'/funciones.php';
-	require dirname(__FILE__).'/paginator.class.php';
 	$e_comm = new envialia();
 }
 
