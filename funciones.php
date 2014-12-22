@@ -272,7 +272,7 @@
 
 				$respuesta = envialiaPost($xml, $this->url);
 
-				if ($respuesta['v1:Result'] && $respuesta['v1:strError']==0){
+				if (isset($respuesta['v1:Result']) && $respuesta['v1:Result'] && $respuesta['v1:strError']==0){
 					$data['logueado'] = true;
 					$data['tipoUsuario'] = $respuesta['v1:strTipo'];
 					$data['nombreUsuario'] = $respuesta['v1:strNom'];
