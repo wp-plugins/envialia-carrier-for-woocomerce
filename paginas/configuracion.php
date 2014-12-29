@@ -44,9 +44,9 @@
 				<tr valign="top"><td scope="row" colspan="2" style="padding-bottom: 20px"><small>Si el plugin no está en línea con el servidor de Envialia <b>no aparecerá el botón</b> para enviar el pedido</small></td></tr>
 
 				<tr valign="top"><th scope="row">Servidor API ENVIALIA<br/><small>Solicítelo en su centro de servicio ENVIALIA. 902400909</small></th><td><input type="text" name="url" maxlength="50" class="big" value="<?php echo get_option('url'); ?>" /></td></tr>
-				<tr valign="top"><th scope="row" style="width: 50%">Centro de servicio</th><td><input type="text" name="codigo_agencia" size="6" maxlength="6" value="<?php echo get_option('codigo_agencia'); ?>" /></td></tr>
-				<tr valign="top"><th scope="row">Código cliente</th><td><input type="text" name="codigo_cliente" size="6" maxlength="5" value="<?php echo get_option('codigo_cliente'); ?>" /></td></tr>
-				<tr valign="top"><th scope="row">Password</th><td><input type="password" name="password_cliente" size="15" maxlength="15" value="<?php echo get_option('password_cliente'); ?>" /></td></tr>
+				<tr valign="top"><th scope="row" style="width: 50%">Centro de servicio</th><td><input type="text" name="codigo_agencia" size="6" maxlength="20" value="<?php echo get_option('codigo_agencia'); ?>" /></td></tr>
+				<tr valign="top"><th scope="row">Código cliente</th><td><input type="text" name="codigo_cliente" size="9" maxlength="20" value="<?php echo get_option('codigo_cliente'); ?>" /></td></tr>
+				<tr valign="top"><th scope="row">Password</th><td><input type="password" name="password_cliente" size="15" maxlength="20" value="<?php echo get_option('password_cliente'); ?>" /></td></tr>
 			</table>
 
 			<table class="form-table" <?php showIfTab('services') ?> data-section="services">
