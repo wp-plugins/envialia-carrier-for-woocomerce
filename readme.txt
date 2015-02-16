@@ -12,7 +12,7 @@ Todo lo que necesitas si trabajas con la empresa de transporte Envialia
 
 == Description ==
 
-**Plugin Envialia Carrier Premium: [Netsis Market](http://market.netsis.es/downloads/envialia-woocommerce-plugin/)**
+**Plugin Envialia Carrier Premium: [Netsis Market](http://netsis.es/downloads/envialia-woocommerce-plugin/)**
 
 **IMPORTANTE: *Envialia Carrier* requiere WooCommerce 2.1.0 o superior.**
 
@@ -57,7 +57,7 @@ En el panel de administrador de Envialia podrá generar automáticamente las eti
 = Notas =
 * Para la funcionalidad de gestión integrada es necesario disponer de un usuario en el API de Envialia y el servidor tiene que tener habilitada la librería **cURL**, puede comprobar si su hosting cumple los requisitos instalándolo y yendo a la sección **Estado** dentro del plugin.
 
-Plugin Envialia Carrier Premium: [Netsis Market](http://market.netsis.es/downloads/envialia-woocommerce-plugin/)
+Plugin Envialia Carrier Premium: [Netsis Market](http://netsis.es/downloads/envialia-woocommerce-plugin/)
 Visita nuestra web: [netsis.es](http://netsis.es/)
 
 == Installation ==
