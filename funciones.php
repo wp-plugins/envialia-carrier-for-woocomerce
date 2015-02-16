@@ -717,7 +717,7 @@
 
 					<p class="justify">Disponemos de una <b>versión premium</b> con más opciones de personalización que incluye actualizaciones, configuración y soporte.</p>
 
-					<p class="center"><a href="http://market.netsis.es/downloads/envialia-woocommerce-plugin" class="button" target="_blank">Envialia Premium</a></p>
+					<p class="center"><a href="http://netsis.es/downloads/envialia-woocommerce-plugin" class="button" target="_blank">Envialia Premium</a></p>
 
 				</div>
 
