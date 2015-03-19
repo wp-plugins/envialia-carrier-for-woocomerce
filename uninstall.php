@@ -15,7 +15,7 @@ function uninstallEnvialia($settings){
 
 		if (is_dir(ENVIALIA_UPLOADS)) rmdir(ENVIALIA_UPLOADS);
 
-		foreach ($settings as $name) delete_option($name);
+		foreach ($envialia_carrier_settings as $name) unregister_setting(ENVIALIA_PLUGIN_OPTIONS, $name);
 
 		$term = get_term_by('name', 'sended', 'shop_order_status');
 		if ($term) wp_delete_term($term->term_id, 'shop_order_status');

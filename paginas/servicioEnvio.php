@@ -37,8 +37,8 @@
 			<tr valign="top"><th scope="row"><label for="selectServicio">Servicio</label></th><td>
 				<select id="selectServicio" name="servicio_elegido">
 				<?php
-					foreach ($servicios as $id_serv => $de_serv):
-						if (!obtenerOpcion('servicio_'.$id_serv) || !$e_comm->servicioValido($id_serv, $pais_cliente)) continue;
+					foreach ($envialia_carrier_servicios as $id_serv => $de_serv):
+						if (!$e_comm->servicioValido($id_serv, $pais_cliente)) continue;
 				?>
 						<option value="<?php echo $id_serv ?>"><?php echo $de_serv ?></option>
 					<?php endforeach ?>

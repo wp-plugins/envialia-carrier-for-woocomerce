@@ -9,7 +9,7 @@
 	}
 
 	function cargarPagina($pagina){
-		global $wpdb, $e_comm, $servicios;
+		global $wpdb, $e_comm, $envialia_carrier_servicios;
 
 		$fichero = "paginas/$pagina.php";
 		$js_fichero = dirname(__FILE__)."/paginas/js/$pagina.php";
@@ -18,8 +18,8 @@
 	}
 
 	function obtenerOpcion($nombre){
-		global $defaults;
-		return (isset($defaults[$nombre]))? get_option($nombre, $defaults[$nombre]):get_option($nombre);
+		global $envialia_carrier_defaults;
+		return (isset($envialia_carrier_defaults[$nombre]))? get_option($nombre, $envialia_carrier_defaults[$nombre]):get_option($nombre);
 	}
 
 	function xml2array($contents, $get_attributes = 1, $priority = 'tag'){
@@ -188,7 +188,7 @@
 				}
 
 				public function calculate_shipping($package){
-					global $e_comm, $woocommerce, $servicios;
+					global $e_comm, $woocommerce, $envialia_carrier_servicios;
 
 					$peso = wc_get_weight($woocommerce->cart->cart_contents_weight, 'kg');
 					$total = $woocommerce->cart->cart_contents_total;
@@ -199,7 +199,7 @@
 
 					$solo_mas_economico = (boolean) obtenerOpcion('mostrar_economico');
 
-					foreach ($servicios as $servId => $servName) {
+					foreach ($envialia_carrier_servicios as $servId => $servName) {
 						if (obtenerOpcion('servicio_'.$servId)){ // El servicio está activo
 
 							// Comprobamos si es gratis
@@ -611,7 +611,7 @@
 
 		    /**** DETERMINA SI UN PAIS PERTENECE A LA PENÍNSULA ****/
 		    function esPeninsular($pais){
-		        $paises = Array("ES","PT","AN");
+		        $paises = Array("ES","PT","AD","GI");
 		        return in_array($pais, $paises);
 		    }
 

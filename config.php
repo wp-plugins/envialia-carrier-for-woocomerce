@@ -9,7 +9,7 @@ define ('ENVIALIA_PLUGIN_URI', plugins_url('envialia-carrier-for-woocomerce'));
 define ('ENVIALIA_UPLOADS', $uploads['basedir'].'/envialia-carrier-for-woocomerce/');
 define ('ENVIALIA_UPLOADS_URL', $uploads['baseurl'].'/envialia-carrier-for-woocomerce/');
 
-$settings = array(
+$envialia_carrier_settings = array(
 				'url',
 				'codigo_agencia',
 				'codigo_cliente',
@@ -37,7 +37,7 @@ $settings = array(
 				'eliminar_datos'
 			);
 
-$defaults = array(
+$envialia_carrier_defaults = array(
 				'servicio_E24' => 1,
 				'servicio_E72' => 1,
 				'servicio_EEU' => 1,
@@ -54,7 +54,7 @@ $defaults = array(
 				'eliminar_datos' => 1
 			);
 
-$servicios = array(
+$envialia_carrier_servicios = array(
 				'E72' => 'Envialia 72h',
 				'E24' => 'Envialia 24h',
 				'EEU' => 'Envialia EU Express',

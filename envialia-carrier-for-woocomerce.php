@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: Envialia Carrier for Woocommerce
-Version: 2.7
+Version: 2.8
 Plugin URI: http://wordpress.org/plugins/envialia-carrier-for-woocomerce/
 Description: Calcula automáticamente el importe del envío por peso o valor de la compra mediante los ficheros csv de Envialia, permitiendo elegir el servicio más conveniente (24h, 72h, internacional...) y también permite tramitar la recogida de los paquetes por Envialia con solo un click, generando las etiquetas del paquete, el número de traking, etc.
-Author URI: http://www.netsis.es/
+Author URI: https://www.netsis.es/
 Author: Netsis Estudio
 License: GPL2
 */
@@ -133,7 +133,7 @@ function registrarEstilosEnvialiaCarrier() {
 /////////////// Páginas del plugin ///////////////////////
 
 function envialiaCarrierPanel(){
-	global $wpdb, $e_comm, $servicios;
+	global $wpdb, $e_comm, $envialia_carrier_servicios;
 
 	if (isset($_GET['action'])){
 		switch($_GET['action']){
@@ -141,7 +141,7 @@ function envialiaCarrierPanel(){
 				$shipment_number = $wpdb->get_var("SELECT order_item_id FROM {$wpdb->prefix}woocommerce_order_items WHERE order_item_type = 'shipping' AND order_id = '$idOrden'");
 				$servicio_activo = (isset($_POST['servicio_elegido']))? $_POST['servicio_elegido']:$wpdb->get_var("SELECT meta_value FROM {$wpdb->prefix}woocommerce_order_itemmeta WHERE meta_key = 'method_id' AND order_item_id = '$shipment_number'");
 
-				if (!empty($servicio_activo) && array_key_exists($servicio_activo, $servicios)){
+				if (!empty($servicio_activo) && array_key_exists($servicio_activo, $envialia_carrier_servicios)){
 					$e_comm->realizaEnvio($_GET['order'], $servicio_activo);
 					break;
 				}
@@ -178,7 +178,7 @@ function envialiaCarrierStatusPage(){
 
 function envialiaPluginExtraActionLinks($links) {
    $links[] = '<a href="'. get_admin_url(null, 'admin.php?page=envialia-carrier-options') .'">Settings</a>';
-   $links[] = '<a href="http://netsis.es/downloads/envialia-woocommerce-plugin/" target="_blank">Premium</a>';
+   $links[] = '<a href="https://netsis.es/downloads/envialia-woocommerce-plugin/" target="_blank">Premium</a>';
    return $links;
 }
 
@@ -203,8 +203,8 @@ add_action('init', 'envialiaCarrierInit');
 /////////////// Configuracion del plugin ///////////////////////
 
 function envialiaCarrierSettings(){
-	global $settings;
-	foreach ($settings as $name) register_setting(ENVIALIA_PLUGIN_OPTIONS, $name);
+	global $envialia_carrier_settings;
+	foreach ($envialia_carrier_settings as $name) register_setting(ENVIALIA_PLUGIN_OPTIONS, $name);
 }
 
 /////////////// Lanzar el plugin ///////////////////////

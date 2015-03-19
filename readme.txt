@@ -1,9 +1,10 @@
 ﻿=== Envialia Carrier ===
 Contributors: netsisEstudio
+Donate link: http://netsis.es/section/donations.html
 Tags: envialia, woocommerce, carrier, send order
 Requires at least: 3.5
-Tested up to: 4.0.1
-Stable tag: 2.7
+Tested up to: 4.1.1
+Stable tag: 2.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +77,9 @@ No, es exclusivo para Envialia
 3. Información sobre el estado del plugin
 
 == Changelog ==
+
+= 2.8 =
+* Corregido conflicto con un nombre de variable.
 
 = 2.7 =
 * Ampliado a 20 el número de caracteres para Centro de servicio, Código cliente y Password.
