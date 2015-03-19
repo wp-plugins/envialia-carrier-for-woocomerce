@@ -1,6 +1,6 @@
 ﻿=== Envialia Carrier ===
 Contributors: netsisEstudio
-Donate link: http://netsis.es/section/donations.html
+Donate link: https://netsis.es/en/donations/
 Tags: envialia, woocommerce, carrier, send order
 Requires at least: 3.5
 Tested up to: 4.1.1
@@ -23,7 +23,7 @@ Muestra al cliente las distintas opciones de envío y su precio dependiendo de d
 = Características =
 
 * Cálculo de tarifa según tramos de peso o mediante el importe de la compra 
-* Permite que el cliente elija entre los servicios Envialia 24h y Envialia 72h o entre Envialia Europe Express y Envialia Worlwide o muestra directamente el más económico sugún sus preferencias.
+* Permite que el cliente elija entre los servicios Envialia 24h y Envialia 72h o entre Envialia Europe Express y Envialia Worldwide o muestra directamente el más económico sugún sus preferencias.
 * Los servicios sólo se muestran en todo caso si están disponibles en el país del cliente.
 * Seguimiento del pedido
 
