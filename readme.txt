@@ -1,6 +1,6 @@
 ﻿=== Envialia Carrier ===
 Contributors: netsisEstudio
-Donate link: https://netsis.es/en/donations/
+Donate link: https://netsis.es/donations/
 Tags: envialia, woocommerce, carrier, send order
 Requires at least: 3.5
 Tested up to: 4.1.1
