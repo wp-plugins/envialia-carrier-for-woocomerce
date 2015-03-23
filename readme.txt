@@ -18,7 +18,7 @@ Este plugin tiene dos funciones principales:
 
 ### Para sus clientes - Métodos de envío (FRONTEND):
 
-Muestra al cliente las distintas opciones de envío y su precio dependiendo de donde viva mediante las tarifas de Envialia durante el proceso de pago o checkout.
+> * Muestra al cliente las distintas opciones de envío y su precio dependiendo de donde viva mediante las tarifas de Envialia durante el proceso de pago o checkout.
 > * Cálculo de tarifa según tramos de peso o mediante el importe de la compra 
 > * Permite que el cliente elija entre los servicios Envialia 24h y Envialia 72h o entre Envialia Europe Express y Envialia Worldwide o muestra directamente el más económico sugún sus preferencias.
 > * Los servicios sólo se muestran en todo caso si están disponibles en el país del cliente.
@@ -27,10 +27,7 @@ Muestra al cliente las distintas opciones de envío y su precio dependiendo de d
 
 ### Para su negocio - Gestión integrada con Envialia (BACKEND):
 
-Complete un pedido en WooCommerce y después pulse el botón del camión (Enviar) y serán tramitado directamente con Envialia, sin introducir ningún dato.
-El pedido pasará al estado "Enviado" (o Sended) y a partir de ese momento el cliente verá un botón en el resumen de pedidos de su cuenta para hacer el seguimiento del paquete.
-En el panel de administrador de Envialia podrá generar automáticamente las etiquetas del paquete, hacer un seguimiento o cancelarlo si el transportista aún no ha salido a recogerlo.
-
+> * Complete un pedido en WooCommerce y después pulse el botón del camión (Enviar) y serán tramitado directamente con Envialia, sin introducir ningún dato. El pedido pasará al estado "Enviado" (o Sended) y a partir de ese momento el cliente verá un botón en el resumen de pedidos de su cuenta para hacer el seguimiento del paquete.En el panel de administrador de Envialia podrá generar automáticamente las etiquetas del paquete, hacer un seguimiento o cancelarlo si el transportista aún no ha salido a recogerlo.
 > * Configuración de los servicios activos que verán sus clientes
 > * Configurar un precio fijo para todos los envíos
 > * Añade un nuevo estado para los pedidos, Enviado o Sended
@@ -46,11 +43,11 @@ En el panel de administrador de Envialia podrá generar automáticamente las eti
 > * Es posible establecer un coste fijo de embalaje/manipulación o un margen sobre el coste del envío
 > * Permite enviar un e-mail personalizado a su cliente para que haga el seguimiento del paquete
 > * Sin nuestra publicidad, sólo se menciona a la empresa de transporte Envialia
+> * Plugin Envialia Carrier Premium: [Netsis Market](https://netsis.es/downloads/envialia-woocommerce-plugin/)
 
 = Notas =
 * Para la funcionalidad de gestión integrada es necesario disponer de un usuario en el API de Envialia y el servidor tiene que tener habilitada la librería **cURL**, puede comprobar si su hosting cumple los requisitos instalándolo y yendo a la sección **Estado** dentro del plugin.
 
-Plugin Envialia Carrier Premium: [Netsis Market](https://netsis.es/downloads/envialia-woocommerce-plugin/)
 Visita nuestra web: [netsis.es](https://netsis.es/)
 
 == Installation ==
