@@ -41,7 +41,6 @@ En el panel de administrador de Envialia podrá generar automáticamente las eti
 > * Puede comprobar si el precio de los envíos es correcto mediante la opción de Simulador
 
 ### Extras en la versión premium (BACKEND):
-
 > * Permite configurar el envío gratuito mediante un servicio a partir de cierto importe de compra
 > * Puede calcular el número de bultos necesarios para un envío e incrementar el coste
 > * Es posible establecer un coste fijo de embalaje/manipulación o un margen sobre el coste del envío
