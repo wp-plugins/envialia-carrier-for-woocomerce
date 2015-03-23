@@ -24,9 +24,9 @@ Este plugin tiene dos funciones principales:
 > * Seguimiento del pedido
 
 ### Para su negocio - Gestión integrada con Envialia (BACKEND):
-* Complete un pedido en WooCommerce y después pulse el botón del camión (Enviar) y serán tramitado directamente con Envialia, sin introducir ningún dato.
-* El pedido pasará al estado "Enviado" y a partir de ese momento el cliente verá un botón en el resumen de pedidos de su cuenta para hacer el seguimiento del paquete.
-* En el panel de administrador de Envialia podrá generar automáticamente las etiquetas del paquete, hacer un seguimiento o cancelarlo si el transportista aún no ha salido a recogerlo.
+> Complete un pedido en WooCommerce y después pulse el botón del camión (Enviar) y serán tramitado directamente con Envialia, sin introducir ningún dato.
+> El pedido pasará al estado "Enviado" y a partir de ese momento el cliente verá un botón en el resumen de pedidos de su cuenta para hacer el seguimiento del paquete.
+> En el panel de administrador de Envialia podrá generar automáticamente las etiquetas del paquete, hacer un seguimiento o cancelarlo si el transportista aún no ha salido a recogerlo.
 > * Configuración de los servicios activos que verán sus clientes
 > * Configurar un precio fijo para todos los envíos
 > * Añade un nuevo estado para los pedidos, Enviado o Sended
@@ -113,3 +113,7 @@ No, es exclusivo para Envialia
 
 = 1.0 =
 * Versión inicial
+
+== Upgrade Notice ==
+= 2.8 =
+Corregido conflicto con nombre de variable $settings, que podía provocar el error: "no se encuentra la página de opciones".
