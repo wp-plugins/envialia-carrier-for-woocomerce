@@ -17,17 +17,16 @@ Todo lo que necesitas si trabajas con la empresa de transporte Envialia
 Este plugin tiene dos funciones principales:
 
 ### Para sus clientes - Métodos de envío (FRONTEND):
-
 > * Muestra al cliente las distintas opciones de envío y su precio dependiendo de donde viva mediante las tarifas de Envialia durante el proceso de pago o checkout.
 > * Cálculo de tarifa según tramos de peso o mediante el importe de la compra 
 > * Permite que el cliente elija entre los servicios Envialia 24h y Envialia 72h o entre Envialia Europe Express y Envialia Worldwide o muestra directamente el más económico sugún sus preferencias.
 > * Los servicios sólo se muestran en todo caso si están disponibles en el país del cliente.
 > * Seguimiento del pedido
 
-
 ### Para su negocio - Gestión integrada con Envialia (BACKEND):
-
-> * Complete un pedido en WooCommerce y después pulse el botón del camión (Enviar) y serán tramitado directamente con Envialia, sin introducir ningún dato. El pedido pasará al estado "Enviado" (o Sended) y a partir de ese momento el cliente verá un botón en el resumen de pedidos de su cuenta para hacer el seguimiento del paquete.En el panel de administrador de Envialia podrá generar automáticamente las etiquetas del paquete, hacer un seguimiento o cancelarlo si el transportista aún no ha salido a recogerlo.
+> * Complete un pedido en WooCommerce y después pulse el botón del camión (Enviar) y serán tramitado directamente con Envialia, sin introducir ningún dato.
+> * El pedido pasará al estado "Enviado" y a partir de ese momento el cliente verá un botón en el resumen de pedidos de su cuenta para hacer el seguimiento del paquete.
+> * En el panel de administrador de Envialia podrá generar automáticamente las etiquetas del paquete, hacer un seguimiento o cancelarlo si el transportista aún no ha salido a recogerlo.
 > * Configuración de los servicios activos que verán sus clientes
 > * Configurar un precio fijo para todos los envíos
 > * Añade un nuevo estado para los pedidos, Enviado o Sended
