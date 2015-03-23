@@ -24,24 +24,24 @@ Este plugin tiene dos funciones principales:
 > * Seguimiento del pedido
 
 ### Para su negocio - Gestión integrada con Envialia (BACKEND):
-> Complete un pedido en WooCommerce y después pulse el botón del camión (Enviar) y serán tramitado directamente con Envialia, sin introducir ningún dato.
-> El pedido pasará al estado "Enviado" y a partir de ese momento el cliente verá un botón en el resumen de pedidos de su cuenta para hacer el seguimiento del paquete.
-> En el panel de administrador de Envialia podrá generar automáticamente las etiquetas del paquete, hacer un seguimiento o cancelarlo si el transportista aún no ha salido a recogerlo.
-> * Configuración de los servicios activos que verán sus clientes
-> * Configurar un precio fijo para todos los envíos
-> * Añade un nuevo estado para los pedidos, Enviado o Sended
-> * Añade un botón a los pedidos completados para tramitarlos con Envialia
-> * Genera las etiquetas que deberá pegar en su paquete
-> * Ver el estado de un envío en cualquier momento
-> * Puede cancelar la recogida, si el transportista aún no ha salido
-> * Puede comprobar si el precio de los envíos es correcto mediante la opción de Simulador
+> * Complete un pedido en WooCommerce y después pulse el botón del camión (Enviar) y serán tramitado directamente con Envialia, sin introducir ningún dato.
+> * El pedido pasará al estado "Enviado" y a partir de ese momento el cliente verá un botón en el resumen de pedidos de su cuenta para hacer el seguimiento del paquete.
+> * En el panel de administrador de Envialia podrá generar automáticamente las etiquetas del paquete, hacer un seguimiento o cancelarlo si el transportista aún no ha salido a recogerlo.
+> * Configuración de los servicios activos que verán sus clientes.
+> * Configurar un precio fijo para todos los envíos.
+> * Añade un nuevo estado para los pedidos, Enviado.
+> * Añade un botón a los pedidos completados para tramitarlos con Envialia.
+> * Genera las etiquetas que deberá pegar en su paquete.
+> * Ver el estado de un envío en cualquier momento.
+> * Puede cancelar la recogida, si el transportista aún no ha salido.
+> * Puede comprobar si el precio de los envíos es correcto mediante la opción de Simulador.
 
 ### Extras en la versión premium (BACKEND):
-> * Permite configurar el envío gratuito mediante un servicio a partir de cierto importe de compra
-> * Puede calcular el número de bultos necesarios para un envío e incrementar el coste
-> * Es posible establecer un coste fijo de embalaje/manipulación o un margen sobre el coste del envío
-> * Permite enviar un e-mail personalizado a su cliente para que haga el seguimiento del paquete
-> * Sin nuestra publicidad, sólo se menciona a la empresa de transporte Envialia
+> * Permite configurar el envío gratuito mediante un servicio a partir de cierto importe de compra.
+> * Puede calcular el número de bultos necesarios para un envío e incrementar el coste.
+> * Es posible establecer un coste fijo de embalaje/manipulación o un margen sobre el coste del envío.
+> * Permite enviar un e-mail personalizado a su cliente para que haga el seguimiento del paquete.
+> * Sin nuestra publicidad, sólo se menciona a la empresa de transporte Envialia.
 > * Plugin Envialia Carrier Premium: [Netsis Market](https://netsis.es/downloads/envialia-woocommerce-plugin/)
 
 = Notas =
@@ -63,9 +63,17 @@ No, es exclusivo para Envialia
 
 == Screenshots ==
 
-1. Panel de Envialia
-2. Configuración del plugin
-3. Información sobre el estado del plugin
+1. Woocommerce > Ajustes > Envío > Envialia_carrier_E72
+2. El plugin tal como se muestra en el listado de plugins de WordPress
+3. Administración de envíos de Envialia
+4. Configuración: Comercio
+5. Configuración: API Envialia
+6. Configuración: Envíos
+7. Configuración: Email Tracking
+8. Configuración: Avanzado
+9. Simulador de checkout
+10. Estado
+11. Solo en la versión PREMIUM: Editor de Tarifas
 
 == Changelog ==
 
@@ -113,3 +121,7 @@ No, es exclusivo para Envialia
 
 = 1.0 =
 * Versión inicial
+
+== Upgrade Notice ==
+= 2.8 =
+Corregido conflicto con nombre de variable $settings, que podía provocar el error: "no se encuentra la página de opciones".
