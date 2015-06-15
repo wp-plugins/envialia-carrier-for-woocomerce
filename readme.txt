@@ -36,14 +36,6 @@ Este plugin tiene dos funciones principales:
 > * Puede cancelar la recogida, si el transportista aún no ha salido.
 > * Puede comprobar si el precio de los envíos es correcto mediante la opción de Simulador.
 
-### Extras en la versión premium (BACKEND):
-> * Permite configurar el envío gratuito mediante un servicio a partir de cierto importe de compra.
-> * Puede calcular el número de bultos necesarios para un envío e incrementar el coste.
-> * Es posible establecer un coste fijo de embalaje/manipulación o un margen sobre el coste del envío.
-> * Permite enviar un e-mail personalizado a su cliente para que haga el seguimiento del paquete.
-> * Sin nuestra publicidad, sólo se menciona a la empresa de transporte Envialia.
-> * Plugin Envialia Carrier Premium: [Netsis Market](https://netsis.es/downloads/envialia-woocommerce-plugin/)
-
 = Notas =
 * Para la funcionalidad de gestión integrada es necesario disponer de un usuario en el API de Envialia y el servidor tiene que tener habilitada la librería **cURL**, puede comprobar si su hosting cumple los requisitos instalándolo y yendo a la sección **Estado** dentro del plugin.
 
@@ -73,7 +65,6 @@ No, es exclusivo para Envialia
 8. Configuración: Avanzado
 9. Simulador de checkout
 10. Estado
-11. Solo en la versión PREMIUM: Editor de Tarifas
 
 == Changelog ==
 
