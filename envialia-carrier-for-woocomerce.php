@@ -178,7 +178,7 @@ function envialiaCarrierStatusPage(){
 
 function envialiaPluginExtraActionLinks($links) {
    $links[] = '<a href="'. get_admin_url(null, 'admin.php?page=envialia-carrier-options') .'">Settings</a>';
-   $links[] = '<a href="https://netsis.es/downloads/envialia-woocommerce-plugin/" target="_blank">Premium</a>';
+   ### $links[] = '<a href="https://netsis.es/downloads/envialia-woocommerce-plugin/" target="_blank">Premium</a>';
    return $links;
 }
 
