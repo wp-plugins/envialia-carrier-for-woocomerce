@@ -5,7 +5,7 @@
 	$paginas = new Paginator;
 	$paginas->items_total = $num;
 	$paginas->items_per_page = 20;
-	$paginas->page = '/envialia-carrier/wp-admin/admin.php?page=envialia-carrier-panel';
+	$paginas->page = '/wp-admin/admin.php?page=envialia-carrier-panel';
 
 	$paginas->paginate();
 
